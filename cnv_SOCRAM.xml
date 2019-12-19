@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bank 
+  Title="SOCRAM csv format"
+  SourceFormat="CSV"
+  BankId="Generic"
+  Language="FR"
+  Currency="EUR"
+  AccountType="CHECKING"
+>
+
+  <parser
+    charsep=";" 
+  />
+  
+  <fields>
+    <field sourceLabel="Date d'opération"           ofxfield="DatePosted" optional="true"  repeat_values_before="true"   format="dd/MM/yyyy" />
+    <field sourceLabel="Libellé de l'opération"           ofxfield="Memo" optional="true"  repeat_values_before="false" />
+	<field sourceLabel="Date de valeur"  ofxfield="DateAvailable" optional="true"  repeat_values_before="false"   format="dd/MM/yyyy" />
+    <field sourceLabel="Débit (EUR)"         ofxfield="Debit" optional="true"  repeat_values_before="false" />
+	<field sourceLabel="Crédit (EUR)"         ofxfield="Credit" optional="true"  repeat_values_before="false" />
+  </fields>
+
+</bank>
+
