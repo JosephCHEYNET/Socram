@@ -1,0 +1,347 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:USASCII
+CHARSET:1252
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+<OFX>
+<SIGNONMSGSRSV1>
+<SONRS>
+<STATUS>
+<CODE>0
+<SEVERITY>INFO
+</STATUS>
+<DTSERVER>20191117
+<LANGUAGE>FR
+</SONRS>
+</SIGNONMSGSRSV1>
+<BANKMSGSRSV1>
+<STMTTRNRS>
+<TRNUID>99fe3986-a467-4080-915b-a4e084b5ff49
+<STATUS>
+<CODE>0
+<SEVERITY>INFO
+</STATUS>
+<STMTRS>
+<CURDEF>EUR
+<BANKACCTFROM>
+<BANKID>Generic
+<ACCTID>SOCRAM
+<ACCTTYPE>CHECKING
+</BANKACCTFROM>
+<BANKTRANLIST>
+<DTSTART>20191028
+<DTEND>20191115
+dateOperation20191115
+libellePrélvt SEPA SOCRAM BANQUE PRLV     73822982 / SOCRAM B 0 005347846 / 000000001793767
+dateValeur20191115
+debit30
+credit
+dateOperation20191115
+libelleVir reçu 15/11/19 DIOT SA DEC. DIOT:9G1KS4
+dateValeur20191115
+debit
+credit7,5
+dateOperation20191114
+libellePaiement 11/11 COFIROUTE cb di n XXXXXXXXXXXX3220
+dateValeur20191114
+debit8,7
+credit
+dateOperation20191112
+libellePrélvt SEPA VEOLIA EAU - COMPA E DES EAUX RUM:++110789299SEPA
+dateValeur20191112
+debit49,18
+credit
+dateOperation20191112
+libelleVir reçu 12/11/19 DIOT SA DEC. DIOT:9G16MY
+dateValeur20191112
+debit
+credit7,5
+dateOperation20191112
+libelleVir reçu 12/11/19 C.P.A.M.LAVAL 193120000914193120000914
+dateValeur20191112
+debit
+credit17,5
+dateOperation20191112
+libellePaiement 08/11 INTERMARCHE cb di n XXXXXXXXXXXX0328
+dateValeur20191112
+debit46,68
+credit
+dateOperation20191112
+libellePaiement 09/11 CARREFOUR MARKE cb di n XXXXXXXXXXXX3220
+dateValeur20191112
+debit59,11
+credit
+dateOperation20191112
+libellePaiement 09/11 COFIROUTE cb di n XXXXXXXXXXXX0328
+dateValeur20191112
+debit3,2
+credit
+dateOperation20191112
+libellePaiement 09/11 HYPER U cb di n XXXXXXXXXXXX0328
+dateValeur20191112
+debit23,79
+credit
+dateOperation20191112
+libellePaiement 09/11 JANYMAF cb di n XXXXXXXXXXXX3220
+dateValeur20191112
+debit11,23
+credit
+dateOperation20191112
+libellePaiement 09/11 STESO cb di n XXXXXXXXXXXX3220
+dateValeur20191112
+debit65,1
+credit
+dateOperation20191112
+libellePaiement 11/11 RATP cb di n XXXXXXXXXXXX3220
+dateValeur20191112
+debit7,45
+credit
+dateOperation20191112
+libellePaiement 11/11 SNCF INTERNET cb di n XXXXXXXXXXXX3220
+dateValeur20191112
+debit71,9
+credit
+dateOperation20191112
+libellePaiement 11/11 YOMI SUSHI cb di n XXXXXXXXXXXX3220
+dateValeur20191112
+debit33,1
+credit
+dateOperation20191112
+libelleRetrait 10/11/19 SION SUR L OC cb n XXXXXXXXXXXX0328
+dateValeur20191112
+debit50
+credit
+dateOperation20191112
+libelleRetrait 11/11/19 PARIS cb n XXXXXXXXXXXX3220
+dateValeur20191112
+debit100
+credit
+dateOperation20191107
+libelleVir reçu 07/11/19 C.P.A.M.LAVAL 193100000952193100000952
+dateValeur20191107
+debit
+credit15,5
+dateOperation20191106
+libelleVir reçu 06/11/19 DIOT SA DEC. DIOT:9G0QVG
+dateValeur20191106
+debit
+credit28,9
+dateOperation20191105
+libellePrélvt SEPA ASSOCIATION ALOUET NOTPROVIDED
+dateValeur20191105
+debit25
+credit
+dateOperation20191105
+libelleVir reçu 05/11/19 MR OU MME CHEYNET MR OU MME CHEYNET
+dateValeur20191105
+debit
+credit560
+dateOperation20191105
+libellePaiement 04/11 APPLE.COM/BILL cb di n XXXXXXXXXXXX3220
+dateValeur20191105
+debit14,99
+credit
+dateOperation20191105
+libelleCotis assurance moyens paiemt
+dateValeur20191105
+debit0,35
+credit
+dateOperation20191105
+libelleCotis compte bleu anis
+dateValeur20191105
+debit7,6
+credit
+dateOperation20191105
+libelleCotis CB Visa supp déb imm
+dateValeur20191105
+debit1,54
+credit
+dateOperation20191104
+libellePrélvt SEPA Orange Votre abonnement fibre (factur e: XXXXX5979H7)
+dateValeur20191104
+debit23,99
+credit
+dateOperation20191104
+libellePrélvt SEPA COURRIER INTERNATI CO----061119PRL000000155149835 4
+dateValeur20191104
+debit8,4
+credit
+dateOperation20191104
+libellePrélvt SEPA SOCRAM BANQUE PRLV     73689068 / SOCRAM B 0 005694735 / 000000002131216
+dateValeur20191104
+debit30
+credit
+dateOperation20191104
+libellePrélvt SEPA TOTAL SPRING (Tota rgie) TOTALSPRING0000000000001500154
+dateValeur20191104
+debit35,69
+credit
+dateOperation20191104
+libelleVir reçu 04/11/19 LE JOINT FRANCAIS 063290003122922019 NDF20191012
+dateValeur20191104
+debit
+credit499,44
+dateOperation20191104
+libellePaiement 02/11 COFIROUTE cb di n XXXXXXXXXXXX0328
+dateValeur20191104
+debit3,2
+credit
+dateOperation20191104
+libellePaiement 02/11 INTERMARCHE cb di n XXXXXXXXXXXX0328
+dateValeur20191104
+debit28,07
+credit
+dateOperation20191104
+libellePaiement 03/11 LA POSTE BOUTIQ cb di n XXXXXXXXXXXX3220
+dateValeur20191104
+debit6,25
+credit
+dateOperation20191101
+libellePrélvt SEPA SAUR Facture SAUR SAPR50000000003192937406
+dateValeur20191102
+debit19
+credit
+dateOperation20191102
+libelleVir reçu 01/11/19 DIOT SA DEC. DIOT:9G0M2U
+dateValeur20191102
+debit
+credit7,5
+dateOperation20191102
+libelleVir reçu 01/11/19 DIOT SA DEC. DIOT:9G0MKN
+dateValeur20191102
+debit
+credit14,01
+dateOperation20191102
+libelleVir reçu 01/11/19 MUTUELLE GENERALE EDUCATION NA OW053P970719053OWRQ70779294BT9
+dateValeur20191102
+debit
+credit15,1
+dateOperation20191031
+libellePrélvt SEPA EDF clients partic Numero de client : 5025324453 - Numero de compte : xxx 00702
+dateValeur20191031
+debit113,24
+credit
+dateOperation20191031
+libelleVir reçu 31/10/19 C.P.A.M.LAVAL 193030000838193030000838
+dateValeur20191031
+debit
+credit15,1
+dateOperation20191031
+libellePaiement 30/10 COMPTOIR MER cb di n XXXXXXXXXXXX3220
+dateValeur20191031
+debit10,05
+credit
+dateOperation20191031
+libellePaiement 30/10 FLORE RENAUD cb di n XXXXXXXXXXXX0328
+dateValeur20191031
+debit29,5
+credit
+dateOperation20191031
+libellePaiement 30/10 PRESTI G cb di n XXXXXXXXXXXX0328
+dateValeur20191031
+debit59,9
+credit
+dateOperation20191031
+libellePaiement 30/10 SARL PPL cb di n XXXXXXXXXXXX0328
+dateValeur20191031
+debit117,36
+credit
+dateOperation20191031
+libellePaiement 30/10 VERODO cb di n XXXXXXXXXXXX0328
+dateValeur20191031
+debit55,9
+credit
+dateOperation20191030
+libellePrélvt SEPA BNP PARIBAS SA CORPORATE CARD 27319711411I
+dateValeur20191030
+debit519,53
+credit
+dateOperation20191030
+libellePrélvt SEPA FREE MOBILE fmpmt-1080297694
+dateValeur20191030
+debit61,97
+credit
+dateOperation20191030
+libellePaiement 28/10 MEDIATHEQUE MPA cb di n XXXXXXXXXXXX3220
+dateValeur20191030
+debit14
+credit
+dateOperation20191030
+libellePaiement 29/10 BAGUETTE GIRASE cb di n XXXXXXXXXXXX3220
+dateValeur20191030
+debit12,3
+credit
+dateOperation20191030
+libellePaiement 29/10 SA JANYMAF cb di n XXXXXXXXXXXX3220
+dateValeur20191030
+debit108,27
+credit
+dateOperation20191030
+libelleVir reçu 30/10/19 LE JOINT FRANCAIS 63241003986 PAIE 10/2019 632/6
+dateValeur20191030
+debit
+credit3927,09
+dateOperation20191029
+libelleVir reçu 29/10/19 C.P.A.M.LAVAL 193010000987193010000987
+dateValeur20191029
+debit
+credit30,69
+dateOperation20191029
+libellePaiement 28/10 DECATHLON 0778 cb di n XXXXXXXXXXXX3220
+dateValeur20191029
+debit36,2
+credit
+dateOperation20191029
+libellePaiement 28/10 OPHTALLIANCE cb di n XXXXXXXXXXXX3220
+dateValeur20191029
+debit90
+credit
+dateOperation20191029
+libelleRetrait 26/10/19 CHATEAU GONTI cb n XXXXXXXXXXXX3220
+dateValeur20191029
+debit80
+credit
+dateOperation20191028
+libelleVir reçu 28/10/19 MUTUELLE GENERALE EDUCATION NA OW053P970319053OWRQ70381995BT9
+dateValeur20191028
+debit
+credit38,89
+dateOperation20191028
+libellePaiement 25/10 COFIROUTE cb di n XXXXXXXXXXXX0328
+dateValeur20191028
+debit3,2
+credit
+dateOperation20191028
+libellePaiement 25/10 HYPER U cb di n XXXXXXXXXXXX0328
+dateValeur20191028
+debit157,4
+credit
+dateOperation20191028
+libellePaiement 25/10 SUPER U cb di n XXXXXXXXXXXX0328
+dateValeur20191028
+debit71,63
+credit
+dateOperation20191028
+libellePaiement 26/10 COFIROUTE cb di n XXXXXXXXXXXX3220
+dateValeur20191028
+debit3,2
+credit
+dateOperation20191028
+libellePaiement 26/10 HYPER U cb di n XXXXXXXXXXXX0328
+dateValeur20191028
+debit22,68
+credit
+dateOperation20191028
+libellePaiement 26/10 M LIRE ANJOU 01 cb di n XXXXXXXXXXXX3220
+dateValeur20191028
+debit12,9
+credit
+dateOperation20191028
+libellePaiement 26/10 SNCF INTERNET cb di n XXXXXXXXXXXX3220
+dateValeur20191028
+debit14,6
+credit

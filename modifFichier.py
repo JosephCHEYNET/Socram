@@ -1,14 +1,37 @@
 from tkinter import filedialog
 from os import path
+import datetime
+
+def conversionDate(date):
+    dateConvertie = date.split('/')
+    return dateConvertie[2]+dateConvertie[1]+dateConvertie[0]
+
 
 """filename = filedialog.askopenfilename(
     initialdir=(path.expanduser("~/Downloads")),
     title="Choisisez le fichier à convertir",
     filetypes=(("csv files", "*.csv"), ("all files", "*.*")),
 )"""
-chemin = '/Users/claireetjo/Downloads/macif'
+chemin = './SOCRAM'
 monChemin = path.dirname(chemin)
 nomFichier = path.basename(chemin)
+#génération des lignes
+lignes = ''
+minDate = 0
+maxDate = 0
+
+with open(chemin+'.csv', 'r',8192,'iso-8859-1') as fichierCsv:   
+    content = fichierCsv.readlines()
+    content.pop(0)
+    for ligne in content:
+        ligne = ligne.replace("&#039;","'")
+        splitLine = ligne.split(';')
+        lignes += 'dateOperation'+conversionDate(splitLine[0])+'\n'
+        lignes += 'libelle'+splitLine[1]+'\n'
+        lignes += 'dateValeur'+conversionDate(splitLine[2])+'\n'
+        lignes += 'debit'+splitLine[3]+'\n'
+        lignes += 'credit'+splitLine[4]+'\n'
+#génération du fichier ofx
 with open(chemin+'.ofx', 'w') as fichierOfx:
     #ecriture de l entete
     fichierOfx.write('OFXHEADER:100'+'\n')
@@ -53,18 +76,7 @@ with open(chemin+'.ofx', 'w') as fichierOfx:
     fichierOfx.write('<DTSTART>20191028'+'\n')
     # date à inscrire
     fichierOfx.write('<DTEND>20191115'+'\n')
-    #génération des lignes
-    with open(chemin+'.csv', 'r',8192,'iso-8859-1') as fichierCsv:   
-        content = fichierCsv.readlines()
-        content.pop(0)
-        for ligne in content:
-            ligne = ligne.replace("&#039;","'")
-            splitLine = ligne.split(';')
-            fichierOfx.write('dateOperation'+splitLine[0]+'\n')
-            fichierOfx.write('libelle'+splitLine[1]+'\n')
-            fichierOfx.write('dateValeur'+splitLine[2]+'\n')
-            fichierOfx.write('debit'+splitLine[3]+'\n')
-            fichierOfx.write('credit'+splitLine[4]+'\n')
+
 
 print('fin')
 
