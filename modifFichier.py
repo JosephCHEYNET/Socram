@@ -17,20 +17,38 @@ monChemin = path.dirname(chemin)
 nomFichier = path.basename(chemin)
 #génération des lignes
 lignes = ''
-minDate = 0
+minDate = 99999999
 maxDate = 0
-
 with open(chemin+'.csv', 'r',8192,'iso-8859-1') as fichierCsv:   
     content = fichierCsv.readlines()
     content.pop(0)
     for ligne in content:
         ligne = ligne.replace("&#039;","'")
         splitLine = ligne.split(';')
-        lignes += 'dateOperation'+conversionDate(splitLine[0])+'\n'
-        lignes += 'libelle'+splitLine[1]+'\n'
-        lignes += 'dateValeur'+conversionDate(splitLine[2])+'\n'
-        lignes += 'debit'+splitLine[3]+'\n'
-        lignes += 'credit'+splitLine[4]+'\n'
+        dateOperation = conversionDate(splitLine[0])
+        minDate = min(minDate,int(dateOperation))
+        maxDate = max(maxDate, int(dateOperation))
+        lignes += '<STMTTRN>'+'\n'
+        amount = 0
+        if splitLine[3] != '':
+            lignes += '<TRNTYPE>DEBIT'+'\n'
+            amount = splitLine[3].replace(',','.')
+            pass
+        else:
+            lignes += '<TRNTYPE>CREDIT'+'\n'
+            amount = splitLine[4].replace(',','.')
+            pass
+        lignes += '<DTPOSTED>'+dateOperation+'\n'   
+        lignes += '<DTAVAIL>'+conversionDate(splitLine[2])+'\n'
+        debit = splitLine[3].replace(',','.')
+        lignes += '<TRNAMT>'+amount+'\n'
+        lignes += '<MEMO>'+splitLine[1]+'\n'
+        #TODO génération du FITID
+        lignes += '<FITID>fa98edfb50b7b7e0dbda334a0c7abea72fa687e6'+'\n'
+        lignes += '</STMTTRN>>'+'\n'
+
+
+
 #génération du fichier ofx
 with open(chemin+'.ofx', 'w') as fichierOfx:
     #ecriture de l entete
@@ -51,8 +69,8 @@ with open(chemin+'.ofx', 'w') as fichierOfx:
     fichierOfx.write('<CODE>0'+'\n')
     fichierOfx.write('<SEVERITY>INFO'+'\n')
     fichierOfx.write('</STATUS>'+'\n')
-    # date du jour à inscrire
-    fichierOfx.write('<DTSERVER>20191117'+'\n')
+    dateDuJour = datetime.datetime.now().strftime('%Y%m%d')
+    fichierOfx.write('<DTSERVER>'+str(datetime.datetime.now().strftime('%Y%m%d'))+'\n')
     fichierOfx.write('<LANGUAGE>FR'+'\n')
     fichierOfx.write('</SONRS>'+'\n')
     fichierOfx.write('</SIGNONMSGSRSV1>'+'\n')
@@ -72,11 +90,10 @@ with open(chemin+'.ofx', 'w') as fichierOfx:
     fichierOfx.write('<ACCTTYPE>CHECKING'+'\n')
     fichierOfx.write('</BANKACCTFROM>'+'\n')
     fichierOfx.write('<BANKTRANLIST>'+'\n')
-    # date à inscrire
-    fichierOfx.write('<DTSTART>20191028'+'\n')
-    # date à inscrire
-    fichierOfx.write('<DTEND>20191115'+'\n')
-
+    fichierOfx.write('<DTSTART>'+str(minDate)+'\n')
+    fichierOfx.write('<DTEND>'+str(maxDate)+'\n')
+    fichierOfx.write(lignes)
+#TODO écrire la fin du ofx
 
 print('fin')
 
