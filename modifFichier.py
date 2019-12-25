@@ -2,10 +2,10 @@ from tkinter import filedialog
 from os import path
 import datetime
 
+#fonction qui sert à transformer les dates au bon format
 def conversionDate(date):
     dateConvertie = date.split('/')
     return dateConvertie[2]+dateConvertie[1]+dateConvertie[0]
-
 
 """filename = filedialog.askopenfilename(
     initialdir=(path.expanduser("~/Downloads")),
@@ -44,14 +44,14 @@ with open(chemin+'.csv', 'r',8192,'iso-8859-1') as fichierCsv:
         lignes += '<TRNAMT>'+amount+'\n'
         lignes += '<MEMO>'+splitLine[1]+'\n'
         #TODO génération du FITID
-        lignes += '<FITID>fa98edfb50b7b7e0dbda334a0c7abea72fa687e6'+'\n'
+        #lignes += '<FITID>fa98edfb50b7b7e0dbda334a0c7abea72fa687e6'+'\n'
         lignes += '</STMTTRN>>'+'\n'
 
 
 
 #génération du fichier ofx
 with open(chemin+'.ofx', 'w') as fichierOfx:
-    #ecriture de l entete
+    #*************** écrire de l'entete **************
     fichierOfx.write('OFXHEADER:100'+'\n')
     fichierOfx.write('DATA:OFXSGML'+'\n')
     fichierOfx.write('VERSION:102'+'\n')
@@ -61,7 +61,7 @@ with open(chemin+'.ofx', 'w') as fichierOfx:
     fichierOfx.write('COMPRESSION:NONE'+'\n')
     fichierOfx.write('OLDFILEUID:NONE'+'\n')
     fichierOfx.write('NEWFILEUID:NONE'+'\n')
-    #ouverture du xml
+    #debut du xml
     fichierOfx.write('<OFX>'+'\n')
     fichierOfx.write('<SIGNONMSGSRSV1>'+'\n')
     fichierOfx.write('<SONRS>'+'\n')
@@ -77,7 +77,7 @@ with open(chemin+'.ofx', 'w') as fichierOfx:
     fichierOfx.write('<BANKMSGSRSV1>'+'\n')
     fichierOfx.write('<STMTTRNRS>'+'\n')
     # TRNUID à inscrire
-    fichierOfx.write('<TRNUID>99fe3986-a467-4080-915b-a4e084b5ff49'+'\n')
+    #fichierOfx.write('<TRNUID>99fe3986-a467-4080-915b-a4e084b5ff49'+'\n')
     fichierOfx.write('<STATUS>'+'\n')
     fichierOfx.write('<CODE>0'+'\n')
     fichierOfx.write('<SEVERITY>INFO'+'\n')
@@ -92,8 +92,20 @@ with open(chemin+'.ofx', 'w') as fichierOfx:
     fichierOfx.write('<BANKTRANLIST>'+'\n')
     fichierOfx.write('<DTSTART>'+str(minDate)+'\n')
     fichierOfx.write('<DTEND>'+str(maxDate)+'\n')
+    #************** écrire des lignes **************
     fichierOfx.write(lignes)
-#TODO écrire la fin du ofx
+    #************** écrire de la fin du ofx **************
+    fichierOfx.write('</BANKTRANLIST>'+'\n')
+    fichierOfx.write('<LEDGERBAL>'+'\n')
+    #écriture du solde
+    #TODO ajouter saisie et inscription du solde
+    fichierOfx.write('<BALAMT>'+str(10)+'\n')
+    fichierOfx.write('<DTASOF>'+str(maxDate)+'\n')
+    fichierOfx.write('</LEDGERBAL>'+'\n')
+    fichierOfx.write('</STMTRS>'+'\n')
+    fichierOfx.write('</STMTTRNRS>'+'\n')
+    fichierOfx.write('</BANKMSGSRSV1>'+'\n')
+    fichierOfx.write('</OFX>'+'\n')
 
 print('fin')
 
