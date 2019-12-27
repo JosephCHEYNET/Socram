@@ -44,7 +44,7 @@ def generationDesLignes():
 			amount = 0
 			if splitLine[3] != '':
 				lignes += '<TRNTYPE>DEBIT'+'\n'
-				amount = splitLine[3].replace(',','.')
+				amount = '-'+splitLine[3].replace(',','.')
 				pass
 			else:
 				lignes += '<TRNTYPE>CREDIT'+'\n'
